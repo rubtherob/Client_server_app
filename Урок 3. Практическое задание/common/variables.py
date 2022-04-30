@@ -16,5 +16,9 @@ ACCOUNT_NAME = 'account_name'
 PRESENCE = 'presence'
 RESPONSE = 'response'
 ERROR = 'error'
+SENDER = 'sender'
 
 LOGGING_LEVEL = logging.DEBUG
+
+MESSAGE = 'message'
+MESSAGE_TEXT = 'mess_text'
