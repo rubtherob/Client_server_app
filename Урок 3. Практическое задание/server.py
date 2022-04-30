@@ -7,9 +7,13 @@ from errors import IncorrectDataRecivedError
 from common.variables import ACTION, ACCOUNT_NAME, RESPONSE, MAX_CONNECTIONS, \
     PRESENCE, TIME, USER, ERROR, DEFAULT_PORT
 from common.utils import get_message, send_message
+from decorator import log_decorator
+import argparse
+
 
 SERVER_LOGGER = logging.getLogger('server')
 
+@log_decorator
 def process_client_message(message):
     SERVER_LOGGER.debug(f'Разбор сообщения от клиента : {message}')
     if ACTION in message and message[ACTION] == PRESENCE and TIME in message \
@@ -20,12 +24,13 @@ def process_client_message(message):
         ERROR: 'Bad Request'
     }
 
-
+@log_decorator
 def create_arg_parser():
     parser = argparse.ArgumentParser()
     parser.add_argument('-p', default=DEFAULT_PORT, type=int, nargs='?')
     parser.add_argument('-a', default='', nargs='?')
     return parser
+
 
 def main():
 

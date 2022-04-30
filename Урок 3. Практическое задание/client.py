@@ -9,9 +9,12 @@ import argparse
 from common.variables import ACTION, PRESENCE, TIME, USER, ACCOUNT_NAME, \
     RESPONSE, ERROR, DEFAULT_IP_ADDRESS, DEFAULT_PORT
 from common.utils import get_message, send_message
+from decorator import log_decorator
+
 
 CLIENT_LOGGER = logging.getLogger('client')
 
+@log_decorator
 def create_presence(account_name='Guest'):
     out = {
         ACTION: PRESENCE,
@@ -23,7 +26,7 @@ def create_presence(account_name='Guest'):
     CLIENT_LOGGER.debug(f'Сформированно {PRESENCE} сообщение для {account_name}')
     return out
 
-
+@log_decorator
 def process_ans(message):
     CLIENT_LOGGER.debug('Разбор сообщения')
     if RESPONSE in message:
@@ -32,7 +35,7 @@ def process_ans(message):
         return f'400 : {message[ERROR]}'
     raise ValueError
 
-
+@log_decorator
 def create_parser_comstr():
     parser = argparse.ArgumentParser()
     parser.add_argument('ip_ad', default=DEFAULT_IP_ADDRESS, nargs='?')
