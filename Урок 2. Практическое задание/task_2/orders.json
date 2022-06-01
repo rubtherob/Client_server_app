@@ -1,0 +1,18 @@
+{
+    "orders": [
+        {
+            "item": "scaner",
+            "quantity": "10",
+            "price": "1000",
+            "buyer": "Stan",
+            "date": "23.08.1992"
+        },
+        {
+            "item": "scaner",
+            "quantity": "10",
+            "price": "1000",
+            "buyer": "Stan",
+            "date": "23.08.1992"
+        }
+    ]
+}

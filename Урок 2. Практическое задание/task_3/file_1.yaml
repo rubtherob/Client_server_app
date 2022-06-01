@@ -1,0 +1,11 @@
+items:
+- ladder
+- house
+- table
+- bad
+items_quantity: 4
+items_ptice:
+  ladder: 200¥-300¥
+  house: 10000¥-30000¥
+  bad: 5¥-50¥
+  table: 4¥-7¥
