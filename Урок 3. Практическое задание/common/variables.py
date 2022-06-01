@@ -19,6 +19,7 @@ ERROR = 'error'
 SENDER = 'sender'
 DESTINATION = 'to'
 EXIT = 'exit'
+LIST_INFO = 'data_list'
 
 LOGGING_LEVEL = logging.DEBUG
 
@@ -26,6 +27,7 @@ MESSAGE = 'message'
 MESSAGE_TEXT = 'mess_text'
 
 RESPONSE_200 = {RESPONSE: 200}
+RESPONSE_202 = {RESPONSE: 202, LIST_INFO: None}
 RESPONSE_400 = {
     RESPONSE: 400,
     ERROR: None
